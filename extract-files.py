@@ -64,6 +64,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libsink.so', 'libsink-mtk.so'),
     'system_ext/lib64/libsource.so': blob_fixup()
         .add_needed('libui_shim.so'),
+    'system/priv-app/ImsService/ImsService.apk': blob_fixup()
+        .apktool_patch('blob-patches/ImsService/'),
     ('vendor/bin/hw/android.hardware.gnss-service.mediatek', 'vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so'): blob_fixup()
         .replace_needed('android.hardware.gnss-V1-ndk_platform.so', 'android.hardware.gnss-V1-ndk.so'),
     'vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b': blob_fixup()
